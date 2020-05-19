@@ -81,5 +81,6 @@ test:
 production:
   <<: *default
   database: DevcampTutorial_production
-  username: DevcampTutorial
-  password: <%= ENV['DEVCAMPTUTORIAL_DATABASE_PASSWORD'] %>
+  username: <%= Rails.application.credentials.dig(:production, :database_username) %>
+  password: <%= Rails.application.credentials.dig(:production, :database_password) %>
+  host: localhost
