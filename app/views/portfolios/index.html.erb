@@ -4,4 +4,5 @@
   <h2><%= portfolio.title %></h2>
   <h3><%= portfolio.subtitle %></h3>
   <%= image_tag portfolio.thumbnail %>
+  <%= link_to 'Edit', edit_portfolio_path(portfolio) %>
 <% end %>
