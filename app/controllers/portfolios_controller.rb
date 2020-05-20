@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio, only: %i[show edit update]
+  before_action :set_portfolio, only: %i[show edit update destroy]
 
   def index
     @portfolios = Portfolio.all.order(title: :asc, subtitle: :asc)
@@ -12,6 +12,7 @@ class PortfoliosController < ApplicationController
     @portfolio = Portfolio.new
   end
 
+  # post request
   def create
     @portfolio = Portfolio.new(portfolio_params)
 
@@ -27,15 +28,25 @@ class PortfoliosController < ApplicationController
   def edit
   end
 
+  # patch request
   def update
     respond_to do |format|
       if @portfolio.update(portfolio_params)
-        format.html { redirect_to portfolios_path, notice: 'Your portfolio was created!' }
+        format.html { redirect_to portfolios_url, success: 'Your portfolio was created!' }
         format.json { render portfolios_path, status: :ok, location: portfolios_path }
       else
         format.html { render :edit, danger: 'There was an error updating your portfolio' }
         format.json { render json: @portfolio.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  # delete request
+  def destroy
+    @portfolio.destroy
+    respond_to do |format|
+      format.html { redirect_to portfolios_url, success: 'Your portfolio was successfully deleted' }
+      format.json { head :no_content }
     end
   end
 
