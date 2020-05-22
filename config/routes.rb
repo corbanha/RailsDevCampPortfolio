@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     get page, to: "pages##{page}"
   end
 
-  resources :blogs
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
 
   # singlize_methods = %w[show, update, destroy]
   # resources :portfolios, except: %i[show, update, destroy]

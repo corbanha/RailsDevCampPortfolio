@@ -7,7 +7,7 @@
     <tr>
       <th>Title</th>
       <th>Body</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -19,6 +19,7 @@
         <td><%= link_to 'Show', blog %></td>
         <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
         <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to blog.status, toggle_status_blog_path(blog) %></td>
       </tr>
     <% end %>
   </tbody>
