@@ -19,8 +19,10 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       if @portfolio.save
         format.html { redirect_to portfolios_path, success: "Your portfolio was created!" }
+        format.json { render :show, status: :created, location: @portfolio }
       else
-        format.html { render :new, danger: "There was an error creating your portfolio" }
+        format.html { render :new }
+        format.json { render json: @portfolio.errors, status: :unprocessable_entity }
       end
     end
   end
