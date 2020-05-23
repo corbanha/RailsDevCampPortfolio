@@ -2,6 +2,8 @@ class Portfolio < ApplicationRecord
   include Placeholder
   validates_presence_of :title, :body, :main_image, :thumbnail
 
+  has_many :technologies
+
   after_initialize :set_defaults
 
   scope :ruby_on_rails, -> { where(subtitle: 'Ruby on Rails') }

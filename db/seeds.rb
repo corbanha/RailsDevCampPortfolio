@@ -18,11 +18,12 @@ end
 end
 
 8.times do |portfolio|
-  Portfolio.create!(title: "Epic Portfolio ##{portfolio}",
+  p = Portfolio.create!(title: "Epic Portfolio ##{portfolio}",
                     subtitle: "Ruby on Rails",
                     body: 'Here is some body text',
                     main_image: 'https://picsum.photos/600/400',
                     thumbnail: 'https://picsum.photos/350/200')
+  p.technologies.create!(name: 'Rails')
 end
 1.times do |portfolio|
   Portfolio.create!(title: "Epic Portfolio ##{portfolio}",
