@@ -5,6 +5,10 @@ class PortfoliosController < ApplicationController
     @portfolios = Portfolio.all.order(title: :asc, subtitle: :asc)
   end
 
+  def angular_items
+    @portfolios = Portfolio.all.order(title: :asc, subtitle: :asc).angular
+  end
+
   def show
   end
 
