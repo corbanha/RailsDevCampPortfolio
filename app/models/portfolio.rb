@@ -4,6 +4,10 @@ class Portfolio < ApplicationRecord
 
   has_many :technologies
 
+  # Use in terminal:
+  #
+  accepts_nested_attributes_for :technologies,
+                                reject_if: lambda { |attrs| attrs['name'].blank? } # don't accept if name (part of technology) is blank
   after_initialize :set_defaults
 
   scope :ruby_on_rails, -> { where(subtitle: 'Ruby on Rails') }
