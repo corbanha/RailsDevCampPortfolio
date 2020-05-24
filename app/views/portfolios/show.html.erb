@@ -8,3 +8,9 @@
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %>
 <%= link_to 'Delete', @portfolio, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<h2>Technologies Used</h2>
+
+<% @portfolio.technologies.each do |tech| %>
+  <p><%= tech.name %></p>
+<% end %>
