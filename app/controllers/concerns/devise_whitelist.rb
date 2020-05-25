@@ -2,7 +2,7 @@ module DeviseWhitelist
   extend ActiveSupport::Concern
 
   included do
-    before_action :devise_permitted_parameters, if: :devise_controller?
+    before_action :devise_permitted_parameters, if: :devise_controller?, only: [:create, :update, :destroy]
   end
 
   protected
