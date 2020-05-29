@@ -1,10 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome to SmallBusinessDudes.com!</h1>
 
-<h1>Posts</h1>
+<h2>Latest Blogs!</h2>
+<% @latest_blogs.each do |blog| %>
+  <h3><%= blog.title %></h3>
+  <p><%= truncate(blog.body, length: 400) %> <%= link_to 'Read more!', blog_path(blog) %></p>
+<% end %>
 
-<%= @posts.inspect %>
-
-<h1>Skills</h1>
-
-<%= @skills.inspect %>
+<%= link_to 'All Blogs', blogs_path %>

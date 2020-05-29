@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @posts = Blog.all
-    @skills = Skill.all
+    @latest_blogs = Blog.limit(5).order(created_at: :desc, title: :asc).published
   end
 
   def about
