@@ -1,26 +1,35 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :toggle_status, :update, :destroy]
+  before_action do
+    @seo_keywords << ' blogs thoughts feelings perspectives'
+  end
 
   # GET /blogs
   # GET /blogs.json
   def index
+    @page_title = 'Blogs'
     @blogs = Blog.all.order(title: :asc, body: :asc)
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @page_title = @blog.title
+    @seo_keywords << ' ' + @blog.title
   end
 
   # GET /blogs/new
   def new
+    @page_title = 'Create a New Blog'
     @blog = Blog.new
   end
 
   # GET /blogs/1/edit
   def edit
+    @page_title = 'Edit a Blog'
   end
 
+  # GET /blogs/1/toggle_status
   def toggle_status
     if @blog.draft?
       @blog.published!
