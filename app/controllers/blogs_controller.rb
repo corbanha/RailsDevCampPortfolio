@@ -3,6 +3,7 @@ class BlogsController < ApplicationController
   before_action do
     @seo_keywords << ' blogs thoughts feelings perspectives'
   end
+  layout 'blog' # This is what makes this controller go and look for the blog.html.erb main layout
 
   # GET /blogs
   # GET /blogs.json
@@ -30,6 +31,7 @@ class BlogsController < ApplicationController
   end
 
   # GET /blogs/1/toggle_status
+  # GET /blogs/1/toggle_status.json
   def toggle_status
     if @blog.draft?
       @blog.published!

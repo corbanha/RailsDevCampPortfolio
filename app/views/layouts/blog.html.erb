@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta charset='UTF-8'>
+    <meta name='description' content='Corban Anderson Projects and Resume Website'>
+    <meta name='keywords' content='<%= @seo_keywords %>'>
+    <meta name='author' content='Corban Harward Anderson'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+    <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to 'Small Business Dudes', root_path %>
+
+    <p class='notice'><%= notice %></p>
+    <p class='alert'><%= alert %></p>
+
+    <h3>Hello, <%= current_user&.first_name %>!</h3>
+    <% if current_user.is_a?(User) %>
+      <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+      <%= link_to 'Edit Account', edit_user_registration_path %>
+    <% else %>
+      <%= link_to 'Create a Free Account!', new_user_registration_path %>
+      <%= link_to 'Log in', new_user_session_path %>
+    <% end %>
+
+    <%= yield %>
+
+    <div>
+      <div><%= link_to 'Blogs', blogs_path %></div>
+      <div><%= link_to 'Portfolios', portfolios_path %></div>
+      <div><%= link_to 'About', about_path %></div>
+      <div><%= link_to 'Contact', contact_path %></div>
+    </div>
+
+    <% if session[:source].present? %>
+      <p>Thanks for visiting me from <%= session[:source] %>!</p>
+    <% end %>
+  </body>
+</html>
