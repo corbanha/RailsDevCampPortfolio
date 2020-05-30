@@ -28,9 +28,6 @@
     <h3>Hello, <%= current_user&.first_name %>!</h3>
 
     <%= yield %>
-
-    <% if session[:source].present? %>
-      <p>Thanks for visiting me from <%= session[:source] %>!</p>
-    <% end %>
+    <%= welcome_from_source('application') %>
   </body>
 </html>

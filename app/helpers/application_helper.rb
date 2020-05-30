@@ -9,4 +9,19 @@ module ApplicationHelper
       (link_to 'Log in', new_user_session_path)
     end
   end
+
+  def welcome_from_source(layout_name)
+    if session[:source].present?
+      case layout_name
+      when 'application'
+        greeting = "Thanks for visiting me from #{session[:source]}!"
+      when 'blog'
+        greeting = "Write something cool here about #{session[:source]}!"
+      else
+        greeting = "Oooh what were you doing on #{session[:source]}!?"
+      end
+
+      content_tag(:p, greeting, class: 'source-greeting')
+    end
+  end
 end
