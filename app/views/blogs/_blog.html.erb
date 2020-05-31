@@ -1,5 +1,6 @@
 <tr>
   <td><%= blog.title %></td>
+  <td><%= content_tag :span, distance_of_time_in_words(blog.created_at, Time.now) + ' ago', title: blog.created_at.to_s %></td>
   <td><%= blog.body %></td>
   <td><%= link_to 'Show', blog %></td>
   <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
