@@ -1,9 +1,6 @@
 <h1>Welcome to SmallBusinessDudes.com!</h1>
 
 <h2>Latest Blogs!</h2>
-<% @latest_blogs.each do |blog| %>
-  <h3><%= blog.title %></h3>
-  <p><%= truncate(blog.body, length: 400) %> <%= link_to 'Read more!', blog_path(blog) %></p>
-<% end %>
+<%= render partial: 'blogs/blog_preview', collection: @latest_blogs, as: :blog %>
 
 <%= link_to 'All Blogs', blogs_path %>
