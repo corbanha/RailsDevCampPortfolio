@@ -12,6 +12,8 @@
  *
  */
 
- .top a {
-   color: brown;
- }
+@import './handpicked_bootstrap.scss';
+
+.top a {
+  color: brown;
+}
