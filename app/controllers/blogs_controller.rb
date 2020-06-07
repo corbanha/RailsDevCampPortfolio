@@ -5,6 +5,9 @@ class BlogsController < ApplicationController
   end
   layout 'blog' # This is what makes this controller go and look for the blog.html.erb main layout
 
+  # petergate access authorization
+  access all: [:show, :index], user: {except: [:new, :create, :update, :edit, :destroy, :toggle_status]}, site_admin: :all
+
   # GET /blogs
   # GET /blogs.json
   def index
