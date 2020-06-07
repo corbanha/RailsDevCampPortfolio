@@ -2,7 +2,7 @@ class Portfolio < ApplicationRecord
   include Placeholder
   validates_presence_of :title, :body, :main_image, :thumbnail
 
-  has_many :technologies
+  has_many :technologies, dependent: :destroy
 
   # Use in terminal:
   # Portfolio.create!(title: 'Web app', subtitle: 'really cool', body: 'aldsjf', technologies_attributes: [{name: 'Ruby'}, {name: 'Rails'}, {name: 'CSS'}, {name: 'Web Dev'}])

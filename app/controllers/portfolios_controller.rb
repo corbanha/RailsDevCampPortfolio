@@ -3,6 +3,9 @@ class PortfoliosController < ApplicationController
 
   layout 'portfolio'
 
+  # Petergate access authorization
+  access all: [:index, :show, :angular_items], user: {except: [:new, :create, :update, :edit, :destroy]}, site_admin: :all
+
   def index
     @portfolios = Portfolio.all.order(title: :asc, subtitle: :asc)
   end
