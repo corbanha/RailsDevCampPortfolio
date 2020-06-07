@@ -35,7 +35,8 @@ gem 'friendly_id', '>= 5.2.4'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 
 # Custom gem for view tools
-gem 'corbanha_view_tool', git: 'https://github.com/corbanha/corbanha_view_tool-Ruby-Gem.git'
+# gem 'corbanha_view_tool', git: 'https://github.com/corbanha/corbanha_view_tool-Ruby-Gem.git'
+gem 'corbanha_view_tool', '~> 0.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
