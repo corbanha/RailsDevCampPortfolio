@@ -9,27 +9,21 @@
     <meta name='description' content='Corban Anderson Projects and Resume Website'>
     <meta name='keywords' content='<%= @seo_keywords %>'>
     <meta name='author' content='Corban Harward Anderson'>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <%= render 'shared/application_nav' %>
+    <div class='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'>
+      <%= render 'shared/application_nav', active: 'home' %>
 
-      <main role="main" class="inner cover">
-        <%= login_helper %>
-
-        <h3>Hello, <%= current_user&.first_name %>!</h3>
-
+      <main role='main' class='inner cover'>
         <%= yield %>
 
       </main>
-
       <%= render 'shared/application_footer' %>
     </div>
-
   </body>
 </html>

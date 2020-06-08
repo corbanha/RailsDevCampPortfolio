@@ -1,12 +1,12 @@
 module ApplicationHelper
 
-  def login_helper
+  def login_helper(klass='nav-link')
     if current_user.is_a?(GuestUser)
-      (link_to 'Create a Free Account!', new_user_registration_path) + '<br />'.html_safe +
-      (link_to 'Log in', new_user_session_path)
+      (link_to 'Register', new_user_registration_path, class: klass, style: 'color: #3498db') +
+      (link_to 'Log in', new_user_session_path, class: klass, style: 'color: #3498db')
     else
-      (link_to 'Log Out', destroy_user_session_path, method: :delete) + '<br />'.html_safe +
-      (link_to 'Edit Account', edit_user_registration_path)
+      (link_to current_user.first_name.titleize, edit_user_registration_path, class: klass, style: 'color: #f1c40f') +
+      (link_to 'Log Out', destroy_user_session_path, method: :delete, class: klass)
     end
   end
 
