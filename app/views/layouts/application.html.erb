@@ -16,19 +16,20 @@
   </head>
 
   <body>
-    <%= link_to 'Small Business Dudes', root_path %>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <%= render 'shared/application_nav' %>
 
-    <%= render 'shared/nav', location: 'top' %>
+      <main role="main" class="inner cover">
+        <%= login_helper %>
 
-    <%= login_helper %>
+        <h3>Hello, <%= current_user&.first_name %>!</h3>
 
-    <p class='notice'><%= notice %></p>
-    <p class='alert'><%= alert %></p>
+        <%= yield %>
 
-    <h3>Hello, <%= current_user&.first_name %>!</h3>
+      </main>
 
-    <%= yield %>
-    <%= welcome_from_source('application') %>
-    <%= copyright_generator %>
+      <%= render 'shared/application_footer' %>
+    </div>
+
   </body>
 </html>
