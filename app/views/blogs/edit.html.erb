@@ -3,5 +3,6 @@
 
   <%= render 'form', blog: @blog %>
 
-  <%= link_to 'Cancel', @blog, class: 'btn btn-danger' %>
+  <%= link_to 'View', @blog, class: 'btn btn-secondary' %>
+  <%= link_to 'Delete', @blog, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
 </div>

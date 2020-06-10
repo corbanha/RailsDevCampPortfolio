@@ -153,6 +153,7 @@ body {
 
 .login > .card { /* any cards nested within a login class*/
   max-width: 20vw;
+  min-width: 500px;
   margin: 0 auto;
   float: none;
 }

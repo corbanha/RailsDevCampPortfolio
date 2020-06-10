@@ -41,6 +41,9 @@ gem 'corbanha_view_tool', '~> 0.1.0'
 # Petergate for auothorization
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 
+# Font Awesome for awesome icons
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
