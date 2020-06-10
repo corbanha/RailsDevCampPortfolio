@@ -1,0 +1,16 @@
+<div class="container">
+  <header class="blog-header py-3">
+
+  <%= render 'jumbotron', blog: blogs.first %>
+
+  <!-- Featured posts -->
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <%= render 'featured_post', blog: blogs.second %>
+    </div>
+    <div class="col-md-6">
+      <%= render 'featured_post', blog: blogs.third %>
+    </div>
+  </div>
+</div>
