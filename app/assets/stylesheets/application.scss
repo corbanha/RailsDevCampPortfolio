@@ -85,6 +85,14 @@ body {
   margin-left: 1rem;
 }
 
+.register_link {
+  color: #3498db;
+}
+
+.current_user_link {
+  color: #f1c40f;
+}
+
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;
@@ -116,7 +124,6 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
-
 
 /*
   Custom styles for the card on the edit user account page

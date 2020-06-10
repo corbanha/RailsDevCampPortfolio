@@ -1,2 +1,12 @@
-<h3><%= blog.title %></h3>
-<p><%= truncate(blog.body, length: 400) %> <%= link_to 'Read more!', blog_path(blog) %></p>
+
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= blog.title %></h2>
+  <p class="blog-post-meta"><%= blog.created_at %> by Corban
+  <em><%= link_to('Edit', edit_blog_path(blog)) if logged_in?(:site_admin) %></em>
+  </p>
+
+  <%= truncate(blog.body, length: 1500) %>
+  <p>
+    <%= link_to 'Continue Reading...', blog_path(blog) %>
+  </p>
+</div>

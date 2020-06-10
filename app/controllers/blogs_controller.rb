@@ -12,7 +12,7 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @page_title = 'Blogs'
-    @blogs = Blog.all.order(title: :asc, body: :asc)
+    @blogs = Blog.order(title: :asc, body: :asc).limit(10)
   end
 
   # GET /blogs/1
