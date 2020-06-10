@@ -125,8 +125,11 @@ body {
   color:black;
 }
 
-.auth-links a {
-  color: black;
+.auth-links {
+  margin-top: 10px;
+  a {
+    color: black;
+  }
 }
 
 .register-text {
@@ -135,4 +138,14 @@ body {
 
 .field {
   margin-top: 15px;
+}
+
+.actions {
+  margin-top: 15px;
+}
+
+.login > .card { /* any cards nested within a login class*/
+  max-width: 20vw;
+  margin: 0 auto;
+  float: none;
 }
