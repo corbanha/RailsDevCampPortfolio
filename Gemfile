@@ -44,6 +44,9 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 # Font Awesome for awesome icons
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 
+# We'll use this to handle pagination for us
+gem 'kaminari', '~> 1.2', '>= 1.2.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
