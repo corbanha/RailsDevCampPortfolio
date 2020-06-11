@@ -22,7 +22,6 @@ Rails.application.routes.draw do
   #   get 'portfolio/:id', to: "portfolios##{method}"
   # end
 
-  resources :portfolios, except: [:show]
-  get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
+  resources :portfolios
   get 'portfolios/angular_items'
 end
