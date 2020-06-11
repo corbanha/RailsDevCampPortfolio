@@ -111,5 +111,5 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   # Put this in for the mailer with devise
-  config.action_mailer.default_url_options = { host: 'mentalkoolaid.com', port: 80 } # TODO: change this to corbanha.com later
+  config.action_mailer.default_url_options = { host: 'smallbusinessdudes.com', port: 80 } # TODO: change this to corbanha.com later
 end
