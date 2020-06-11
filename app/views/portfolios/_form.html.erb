@@ -1,40 +1,52 @@
 <%= form_for(portfolio) do |form| %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class='row'>
+    <div class='col-md-6'>
+      <div class="field form-group">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="field form-group">
+        <%= form.label :subtitle %>
+        <%= form.text_area :subtitle, class: 'form-control' %>
+      </div>
+
+      <div class="field form-group">
+        <%= form.label :thumbnail %>
+        <%= form.text_area :thumbnail, class: 'form-control' %>
+      </div>
+
+      <div class="field form-group">
+        <%= form.label :main_image %>
+        <%= form.text_area :main_image, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='col-md-6'>
+      <div class="field form-group">
+        <%= form.label :body %>
+        <%= form.text_area :body, class: 'form-control', rows: '15' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :subtitle %>
-    <%= form.text_area :subtitle %>
-  </div>
+  <hr/>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div class="field">
-    <%= form.label :thumbnail %>
-    <%= form.text_area :thumbnail %>
-  </div>
-
-  <div class="field">
-    <%= form.label :main_image %>
-    <%= form.text_area :main_image %>
-  </div>
-
-  <ul>
-    <%= form.fields_for :technologies do |tech| %>
-      <li>
-        <%= tech.label :name %>
-        <%= tech.text_field :name %>
-      </li>
-    <% end %>
-  </ul>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class='form-group'>
+        <%= form.label 'Technologies Used' %>
+        <%= form.fields_for :technologies do |tech| %>
+          <div>
+            <%= tech.label :name %>
+            <%= tech.text_field :name, class: 'form-control' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="actions form-group">
+        <%= form.submit 'Submit', class: 'btn btn-primary' %>
+      </div>
+    </div>
   </div>
 <% end %>
