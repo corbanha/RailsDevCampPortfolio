@@ -15,7 +15,7 @@ require("channels");
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log($.fn.jquery);
-console.log("Hello!");
+console.log("hello!")
+//console.log($.fn.jquery)
 
 import './handpicked_bootstrap.js';
