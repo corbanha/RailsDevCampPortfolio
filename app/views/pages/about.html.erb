@@ -1,6 +1,15 @@
 <h1>About Me</h1>
-<p>I have always loved tinkering and creating - building experiences that others can enjoy, use and love.</p>
-<p>Through the medium of bits and bytes I’ve created apps, websites, standalone programs, web services, you name it. It’s fun! I love to see ideas grow and flourish into amazing experiences that can change perspectives and lives. Please explore my site, and reach out to me for business or for just to chat</p>
-<p class='lead'>
-  <%= link_to 'Contact', contact_path, class: 'btn btn-lg btn-secondary' %>
-</p>
+
+<div class='row'>
+  <div class='col-md-6' style='text-align: center;'>
+    <%= image_pack_tag('CorbanAnderson.jpg', width: 300, alt: 'Corban Anderson at BYU Ediquitte Dinner') %>
+  </div>
+
+  <div class='col-md-6'>
+    <p>I have always loved tinkering and creating - building experiences that others can enjoy, use and love.</p>
+    <p>Through the medium of bits and bytes I’ve created apps, websites, standalone programs, web services, you name it. It’s fun! I love to see ideas grow and flourish into amazing experiences that can change perspectives and lives. Please explore my site, and reach out to me for business or for just to chat</p>
+    <p class='lead'>
+      <%= link_to 'Contact', contact_path, class: 'btn btn-lg btn-secondary' %>
+    </p>
+  </div>
+</div>
