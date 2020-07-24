@@ -15,11 +15,23 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class='background'>
+  <body>
     <div class='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'>
       <%= render 'shared/application_nav', active: 'home' %>
 
       <main role='main' class='inner cover'>
+        <!-- <div class='background background_element'></div> -->
+
+        <%= video_tag(
+          'Iona32.mp4',
+          class: 'background-element',
+          autoplay: true,
+          loop: true,
+          muted: true,
+          poster: 'triangle_background1.jpg'
+          )
+        %>
+
         <%= yield %>
       </main>
       <%= render 'shared/application_footer' %>

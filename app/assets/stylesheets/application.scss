@@ -193,7 +193,26 @@ background-position: center;
 background-repeat: no-repeat;
 */
 
-.background {
-  background: fixed image-url('triangle_background1.jpg') no-repeat center;
+/* Simple background image, this is sufficient if for example you just added this class to the body tag */
+.background-image {
+  background-image: image-url('triangle_background1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   background-size: cover;
+}
+
+/* Use for single background image/video, stays in same spot, if image also have class background-image */
+.background-element {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-attachment: inherit;
 }
