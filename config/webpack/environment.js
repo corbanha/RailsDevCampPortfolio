@@ -1,6 +1,6 @@
 const { environment } = require('@rails/webpacker')
 
-console.log("In here!!!")
+console.log("DEBUG: Ran Webpack setup");
 
 const webpack = require('webpack')
 environment.plugins.prepend('Provide',
