@@ -1,9 +1,9 @@
-<div id="goToTop" title="Beam me up Scotty!" onclick="openURL('#very_top', false);" style="display: none;">
+<div id="goToTop" title="Beam me up Scotty!" style="display: none;">
   <p style="margin-top: 20px">^</p>
 </div>
 
 <div class="row no-gutters">
-  <div class="div-background-image box-image" style="background-image: url('assets/background.jpg'); height: 100vh;">
+  <div class="div-background-image box-image" style="background-image: url('<%= asset_path('background.jpg') %>'); height: 100vh;">
     <div class="cover div-centered-text">
       <h1 class='cover-heading'>Welcome.</h1>
       <p class='lead'>Here Computer Science AI/ML combine with Business Intel to create something amazing. Oh, and memes, can't forget the memes</p>
@@ -33,7 +33,7 @@
 </div>
 
 <div class="row no-gutters">
-  <div class="window-image div-background-image" style="background-image: url('assets/wakeboarding.jpg')">
+  <div class="window-image div-background-image" style="background-image: url('<%= asset_path('wakeboarding.jpg') %>')">
   </div>
 </div>
 
@@ -215,7 +215,7 @@
 </div>
 
 <div class="row no-gutters">
-  <div class="window-image div-background-image" style="background-image: url('assets/laptop_computer.jpg')">
+  <div class="window-image div-background-image" style="background-image: url('<%= asset_path('laptop_computer.jpg') %>')">
   </div>
 </div>
 

@@ -51,7 +51,15 @@ $(document).ready(() => {
       }
     ]
   });*/
+
+  $('#goToTop').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    console.log("scrolling to top");
+    return false;
+  })
 });
+
+console.log("In here!!!");
 
 window.onscroll = function(){
   var pageOffset = document.documentElement.scrollTop || document.body.scrollTop;
