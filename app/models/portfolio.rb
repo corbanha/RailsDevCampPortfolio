@@ -4,6 +4,9 @@ class Portfolio < ApplicationRecord
 
   has_many :technologies, dependent: :destroy
 
+  # mount_uploader :thumbnail, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
+
   # Use in terminal:
   # Portfolio.create!(title: 'Web app', subtitle: 'really cool', body: 'aldsjf', technologies_attributes: [{name: 'Ruby'}, {name: 'Rails'}, {name: 'CSS'}, {name: 'Web Dev'}])
   accepts_nested_attributes_for :technologies,

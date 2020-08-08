@@ -13,13 +13,8 @@
       </div>
 
       <div class="field form-group">
-        <%= form.label :thumbnail %>
-        <%= form.text_area :thumbnail, class: 'form-control' %>
-      </div>
-
-      <div class="field form-group">
         <%= form.label :main_image %>
-        <%= form.text_area :main_image, class: 'form-control' %>
+        <%= form.file_field :main_image, class: 'form-control' %>
       </div>
     </div>
 

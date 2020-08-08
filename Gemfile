@@ -47,6 +47,18 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 # We'll use this to handle pagination for us
 gem 'kaminari', '~> 1.2', '>= 1.2.1'
 
+# Carrierwave for file uploads
+gem 'carrierwave', '~> 2.1'
+
+# Carrierwave-aws to file upload to aws
+gem 'carrierwave-aws', '~> 1.5'
+
+# Support basic image manipulation
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+
+# TODO add what this is for here
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
