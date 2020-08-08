@@ -10,9 +10,9 @@
           <h4 class="text-white">Contact</h4>
           <ul class="list-unstyled">
             <li><%= link_to 'Grand Central', root_path, class: 'text-white' %></li>
-            <li><%= link_to 'About', about_path, class: 'text-white' %></li>
-            <li><%= link_to 'Blogs', blogs_path, class: 'text-white' %></li>
-            <li><%= link_to 'Contact', contact_path, class: 'text-white' %></li>
+            <li><%#= link_to 'About', about_path, class: 'text-white' %></li>
+            <li><%#= link_to 'Blogs', blogs_path, class: 'text-white' %></li>
+            <li><%#= link_to 'Contact', contact_path, class: 'text-white' %></li>
             <li><%= login_helper(registerClass='text-white', loginClass='text-white', currentUserClass='text-white', logoutClass='text-white') %></li>
             <li><%= link_to('New Portfolio', new_portfolio_path, class: 'text-white') if logged_in?(:site_admin) %></li>
           </ul>

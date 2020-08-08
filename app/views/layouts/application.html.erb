@@ -16,13 +16,16 @@
   </head>
 
   <body>
-    <div class='cover-container d-flex w-100 h-100 p-3 mx-auto flex-column'>
+    <div class='cover-container d-flex w-100 h-100 mx-auto flex-column'>
       <%= render 'shared/application_nav', active: 'home' %>
-
-      <main role='main' class='inner cover'>
+      <!-- <p class='notice'><%= notice %></p>
+      <p class='alert'><%= alert %></p> -->
+      <%#= login_helper %>
+      <%= %>
+      <main role='main' class='inner'>
         <!-- <div class='background background_element'></div> -->
 
-        <%= video_tag(
+        <%#= video_tag(
           'Iona32.mp4',
           class: 'background-element',
           autoplay: true,
@@ -36,5 +39,9 @@
       </main>
       <%= render 'shared/application_footer' %>
     </div>
+
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
   </body>
 </html>

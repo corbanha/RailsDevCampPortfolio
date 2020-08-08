@@ -1,14 +1,9 @@
-<header class='masthead mb-auto'>
-  <div class='inner'>
-    <h3 class='masthead-brand'>Corban Anderson</h3>
-    <nav class='nav nav-masthead justify-content-center'>
-      <%= link_to 'Home', root_path, class: "nav-link#{' active' if active == 'home'}" %>
-      <%= link_to 'About', about_path, class: "nav-link#{' active' if active == 'about'}" %>
-      <%= link_to 'Blogs', blogs_path, class: "nav-link#{' active' if active == 'blogs'}" %>
-      <%= link_to 'Portfolios', portfolios_path, class: "nav-link#{' active' if active == 'portfolios'}" %>
-      <%= link_to 'Contact', contact_path, class: "nav-link#{' active' if active == 'contact'}" %>
-      <%= login_helper(registerClass='nav-link register_link', loginClass='nav-link login_link',
-                       currentUserClass='nav-link current_user_link') %>
-    </nav>
+<nav class='navbar navbar-default navbar-fixed-top'>
+  <div class='container'>
+    <%#= link_to 'About', '#about_me', class: "nav-link#{' active' if active == 'about'}" %>
+    <%#= link_to 'Projects', '#projects', class: "nav-link#{' active' if active == 'portfolios'}" %>
+    <%#= scroll_into_view_link 'Contact', '#contact_me', "nav-link#{' active' if active == 'contact'}" %>
+    <%#= login_helper(registerClass='nav-link register_link', loginClass='nav-link login_link',
+                      currentUserClass='nav-link current_user_link') %>
   </div>
-</header>
+</nav>

@@ -1,5 +1,232 @@
-<h1 class='cover-heading'>Welcome.</h1>
-<p class='lead'>Here Computer Science AI/ML combine with Business Intel to create something amazing. Oh, and memes, can't forget the memes</p>
-<p class='lead'>
-  <%= link_to 'Learn more', about_path, class: 'btn btn-lg btn-secondary' %>
-</p>
+<div id="goToTop" title="Beam me up Scotty!" onclick="openURL('#very_top', false);" style="display: none;">
+  <p style="margin-top: 20px">^</p>
+</div>
+
+<div class="row no-gutters">
+  <div class="div-background-image box-image" style="background-image: url('assets/background.jpg'); height: 100vh;">
+    <div class="cover div-centered-text">
+      <h1 class='cover-heading'>Welcome.</h1>
+      <p class='lead'>Here Computer Science AI/ML combine with Business Intel to create something amazing. Oh, and memes, can't forget the memes</p>
+      <p class='lead'>
+        <%= link_to 'Learn more', '#about_me', class: 'btn btn-lg btn-secondary' %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class='container' style='min-height: 80vh; padding-top: 20vh;'>
+  <h1 id='about_me'>About</h1>
+
+  <div class='row'>
+    <div class='col-md-6' style='text-align: center;'>
+      <%= image_pack_tag('CorbanAnderson.jpg', width: 300, alt: 'Corban Anderson at BYU Ediquitte Dinner') %>
+    </div>
+
+    <div class='col-md-6'>
+      <p>I have always loved tinkering and creating - building experiences that others can enjoy, use and love.</p>
+      <p>Through the medium of bits and bytes I’ve created apps, websites, standalone programs, web services, you name it. It’s fun! I love to see ideas grow and flourish into amazing experiences that can change perspectives and lives. Please explore my site, and reach out to me for business or for just to chat</p>
+      <p class='lead'>
+        <%= link_to 'Contact', '#contact_me', class: 'btn btn-lg btn-secondary' %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row no-gutters">
+  <div class="window-image div-background-image" style="background-image: url('assets/wakeboarding.jpg')">
+  </div>
+</div>
+
+<!-- Projects -->
+
+<div class='container'>
+  <h1 id='projects'>Projects <h5><%= link_to('(New)', new_portfolio_path, method: :get)if current_user.has_role?(:site_admin) %></h5></h1>
+  <div class='row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3'>
+    <% @portfolios.each do |portfolio| %>
+      <div class='col'>
+        <div class="card">
+          <img src="assets/AsteroidsShot.png" class="card-img-top" alt="...">
+          <%#= image_tag(portfolio.main_image, class: 'card-img-top', alt: 'portfolio.image_alt') %>
+          <div class="card-body">
+            <h5 class="card-title"><%= portfolio.title %></h5>
+            <p class="card-text"><%= portfolio.body %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <% portfolio.technologies.each do |tech| %>
+              <li class="list-group-item"><%= tech.name %></li>
+            <% end %>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+
+            <% if current_user.has_role?(:site_admin) %>
+              <%= link_to edit_portfolio_path(portfolio), class: 'card-link' do %>
+                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-pencil" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>
+                  <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/>
+                </svg>
+              <% end %>
+              <%= link_to portfolio_path(portfolio), class: 'card-link', method: :delete do %>
+                <svg width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <!--
+    <div class="grid-item projects_container_box">
+        <div class="projects_project_box hover_shadow" title="View on GitHub" onclick="openURL('https://github.com/corbanha/FamilyMapServer', newWindow=true)"
+        style="cursor: pointer;">
+            <img src="images/FamilyMapServerShot.png" class="projects_project_image">
+            <h2 class="projects_project_title">FamilyMap App + Server</h2>
+            <h3 class="projects_project_date">Jun 2019</h3>
+            <h3 class="projects_project_language">Android, Java</h3>
+            <h3 class="projects_project_description">Custom Family History Android app which connects to a custom Java server making various get/post requests for logging in, updating data, etc.
+                App comes complete with Google Map API integration, mapping family data with connecting lines and markers
+            </h3>
+        </div>
+    </div>
+
+    <div class="grid-item lame_project projects_container_box">
+        <div class="projects_project_box hover_shadow" title="View on GitHub" onclick="openURL('https://github.com/corbanha/PythonAdventureGame', newWindow=true)"
+        style="cursor: pointer;">
+            <img src="images/PythonAdventureGameShot.png" class="projects_project_image">
+            <h2 class="projects_project_title">Python Adventure Game</h2>
+            <h3 class="projects_project_date">Dec 2018</h3>
+            <h3 class="projects_project_language">Python</h3>
+            <h3 class="projects_project_description">A simple RPG console game where the user goes through 10 stages or quests
+            until they beat the last one. Each quest either consists of buying items at the trading post, or fighting different and diverse enemies
+            </h3>
+        </div>
+    </div>
+
+    <div class="grid-item projects_container_box">
+        <div class="projects_project_box hover_shadow" title="View on GitHub" onclick="openURL('https://github.com/corbanha/Tetris-Site-with-Authentication', newWindow=true)"
+        style="cursor: pointer;">
+            <img src="images/TetrisOnlineShot.png" class="projects_project_image">
+            <h2 class="projects_project_title">Tetris Site with Authentication</h2>
+            <h3 class="projects_project_date">Dec 2018</h3>
+            <h3 class="projects_project_language">HTML, CSS, JS, + MEAN (Mongo, Express, Angular, Node)</h3>
+            <h3 class="projects_project_description">This project takes and expands upon my previous Tetris project by adding full fledged support
+            for users to create an account on the website and login with their Tetris scores saved. Cookies are also used to keep them logged in
+            on their specific computer. They can update their email and other account info through an account info page. Basic security is
+            implemented included hashing their password to ensure some basic security
+            </h3>
+        </div>
+    </div>
+
+    <div class="grid-item projects_container_box lame_project">
+            <div class="projects_project_box">
+                <img src="images/CalculateStarWarsShot.png" class="projects_project_image">
+                <h2 class="projects_project_title">Star Wars Character Generator</h2>
+                <h3 class="projects_project_date">Oct 2018</h3>
+                <h3 class="projects_project_language">HTML, CSS, JS, jQuery + AJAX</h3>
+                <h3 class="projects_project_description">Which Star Wars character do you most identify with? Use this website to find out!
+                Also gets you all of the information you could ever want about your character, including information about their planet and ships etc
+                by making calls to the Star Wars API
+                </h3>
+            </div>
+        </div>
+
+    <div class="grid-item projects_container_box lame_project">
+        <div class="projects_project_box hover_shadow" title="View on GitHub" onclick="openURL('https://github.com/corbanha/Book-Club-Comment-Site', newWindow=true)"
+        style="cursor: pointer;">
+            <img src="images/BoMCommentSiteShot.png" class="projects_project_image">
+            <h2 class="projects_project_title">Book Club Comment Website</h2>
+            <h3 class="projects_project_date">Nov 2018</h3>
+            <h3 class="projects_project_language">HTML, CSS, JS, Node.js + Mongo</h3>
+            <h3 class="projects_project_description">This website is built for users to post comments of how their reading of the Book of Mormon is going.
+            The comments are stored in a Mongo.js database on the Node.js server and the website updates every 10 seconds to show the new comments in near real time to viewers
+            </h3>
+        </div>
+    </div>
+
+    <div class="grid-item projects_container_box">
+            <div class="projects_project_box">
+                <img src="images/FirstVisionComparisonShot.png" class="projects_project_image">
+                <h2 class="projects_project_title">First Vision Comparison</h2>
+                <h3 class="projects_project_date">Dec 2018</h3>
+                <h3 class="projects_project_language">HTML, CSS, JS</h3>
+                <h3 class="projects_project_description">A website that helps users compare different versions of the Joseph Smith's First Vision.
+                Allows comparison of up to all of the visions at the same time, also has handy optional selected highlighting for different areas of interest
+                within each vision including people, places, similarities and differences between each vision
+                </h3>
+            </div>
+        </div>
+
+    <div class="grid-item projects_container_box">
+        <div class="projects_project_box hover_shadow" title="Visit the Website!" onclick="openURL('http://www.readthestandardworks.com', newWindow=true)"
+        style="cursor: pointer;">
+            <img src="images/ReadTheStandardWorksShot.png" class="projects_project_image">
+            <h2 class="projects_project_title">Read the Standard Works</h2>
+            <h3 class="projects_project_date">2018</h3>
+            <h3 class="projects_project_language">HTML, CSS, JS</h3>
+            <h3 class="projects_project_description">
+            Website I built which allows users to set custom start and stop dates for reading the scriptures, then it schedules out how many chapters to read each day based on the number of verses in each chapter
+            </h3>
+        </div>
+    </div>
+
+    <div class="grid-item projects_container_box lame_project">
+        <div class="projects_project_box hover_shadow" title="View on GitHub" onclick="openURL('https://github.com/corbanha/CSFValentineProgram', newWindow=true)"
+        style="cursor: pointer;">
+            <img src="images/CSFVShot.jpg" class="projects_project_image">
+            <h2 class="projects_project_title">CSF Valentine Match Up</h2>
+            <h3 class="projects_project_date">Feb 2016</h3>
+            <h3 class="projects_project_language">Java, JavaFX</h3>
+            <h3 class="projects_project_description">This is a program I wrote in high school for the California Scholarship Federation club. They have a Valentine's Day
+                fundraiser where students can take a survey and see their best date options. I wrote the program that did all of the matching, printing, formatting, and so on.
+                They still use the program to this day!
+            </h3>
+        </div>
+    </div>
+
+    <div class="grid-item projects_container_box">
+        <div class="projects_project_box hover_shadow" title="Download it on Google Play!" onclick="openURL('https://play.google.com/store/apps/details?id=com.ketchup.firehydrant.studios.lds.caa.android', newWindow=true)"
+            style="cursor: pointer;">
+            <img src="images/LDSCAAShot.png" class="projects_project_image">
+            <h2 class="projects_project_title">LDS Children's Activity App</h2>
+            <h3 class="projects_project_date">Feb 2016</h3>
+            <h3 class="projects_project_language">Java, Android Dev, LibGDX</h3>
+            <h3 class="projects_project_description">Android app developed for the LDSTech app
+                contest in 2014. Got 2nd place in the Children 12 and Under division. Currently has over 90,000 downloads on Google Play! It is
+                an app with many different games including Memory, 2048, Hangman, Simon, and others but with a gospel twist</h3>
+        </div>
+    </div>
+
+    <div class="grid-item projects_container_box lame_project">
+        <div class="projects_project_box">
+            <img src="images/MoneyDashShot.png" class="projects_project_image">
+            <h2 class="projects_project_title">Money Dash</h2>
+            <h3 class="projects_project_date">Dec 2015</h3>
+            <h3 class="projects_project_language">Java, Android Dev, LibGDX</h3>
+            <h3 class="projects_project_description">A classic catching game where the user controls a bucket and tries to catch all of the falling coins. Don't drop any of 'em!!!
+                It's easy at first, but quickly picks up pace and soon the player is scrambling to catch all the coins. It sure doesn't help that soon
+                bombs, squids, clouds, and other obstacles get in the way! Abilities and add-ons can be purchased in the store to get a higher score!</h3>
+        </div>
+    </div> -->
+
+  </div>
+</div>
+
+<div class="row no-gutters">
+  <div class="window-image div-background-image" style="background-image: url('assets/laptop_computer.jpg')">
+  </div>
+</div>
+
+<div class='container'>
+  <div class='row'>
+    <div class='col'>
+      <h1 id='contact_me'>Contact Me</h1>
+      <p><%= link_to 'corban@corbanha.com', 'mailto:corban@corbanha.com?subject=Corban%20Anderson%20Portfolio%20Contact' %></p> <br />
+      <p><%= link_to 'The Gits', 'https://www.github.com/corbanha' %></p> <br />
+      <p><%= link_to 'LinkedIn ', 'https://www.linkedin.com/in/corban-anderson-a3546366' %></p>
+    </div>
+  </div>
+</div>

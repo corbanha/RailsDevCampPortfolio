@@ -7,6 +7,7 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
+require("./helpers");
 //const Particles = require('particlesjs');
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -51,3 +52,20 @@ $(document).ready(() => {
     ]
   });*/
 });
+
+window.onscroll = function(){
+  var pageOffset = document.documentElement.scrollTop || document.body.scrollTop;
+
+  //show or hide the button
+  if(pageOffset >= 500){
+    $('.navbar').fadeOut(500);
+  }else{
+    $('.navbar').fadeIn(500);
+  }
+
+  if(pageOffset >= 1000){
+    $('#goToTop').fadeIn(500);
+  }else{
+    $('#goToTop').fadeOut(500);
+  }
+};

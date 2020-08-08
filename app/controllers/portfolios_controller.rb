@@ -28,7 +28,7 @@ class PortfoliosController < ApplicationController
 
     respond_to do |format|
       if @portfolio.save
-        format.html { redirect_to portfolios_path, success: "Your portfolio was created!" }
+        format.html { redirect_to root_path, success: "Your portfolio was created!" }
         format.json { render :show, status: :created, location: @portfolio }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class PortfoliosController < ApplicationController
   def update
     respond_to do |format|
       if @portfolio.update(portfolio_params)
-        format.html { redirect_to portfolios_url, success: 'Your portfolio was created!' }
+        format.html { redirect_to root_url, success: 'Your portfolio was created!' }
         format.json { render portfolios_path, status: :ok, location: portfolios_path }
       else
         format.html { render :edit, danger: 'There was an error updating your portfolio' }
@@ -57,7 +57,7 @@ class PortfoliosController < ApplicationController
   def destroy
     @portfolio.destroy
     respond_to do |format|
-      format.html { redirect_to portfolios_url, success: 'Your portfolio was successfully deleted' }
+      format.html { redirect_to root_url, success: 'Your portfolio was successfully deleted' }
       format.json { head :no_content }
     end
   end
