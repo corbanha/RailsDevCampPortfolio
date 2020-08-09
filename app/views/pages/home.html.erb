@@ -56,8 +56,8 @@
             <% end %>
           </ul>
           <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <%#= link_to 'Card link', '#', class: 'card-link' %>
+            <%#= link_to 'Another link', '#', class: 'card-link' %>
 
             <% if current_user.has_role?(:site_admin) %>
               <%= link_to edit_portfolio_path(portfolio), class: 'card-link', title: 'Edit' do %>
